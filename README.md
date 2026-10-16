@@ -66,4 +66,4 @@ Deployed to Vercel as a container using `Dockerfile.vercel` and `vercel.json` (a
 - A second `.csproj` in the same folder broke the build ("more than one project file"); it was removed.
 - Duration stored as a string sorted incorrectly (e.g. "10:00" < "3:32"), so it was switched to seconds.
 - Vercel scales the container to zero when idle and may run several instances under load. Because data is in memory, it resets after idle periods and may differ between instances (e.g. a song added on one instance may not appear on another). A shared store such as Redis would fix this, but the assignment requires an in-memory database.
-- - Behind Vercel's proxy the OpenAPI document listed an `http` server URL, so "Try it out" requests were blocked as mixed content on the `https` page. The servers list was cleared so Swagger UI uses the page's own origin.
+-  Behind Vercel's proxy the OpenAPI document listed an `http` server URL, so "Try it out" requests were blocked as mixed content on the `https` page. The servers list was cleared so Swagger UI uses the page's own origin.
