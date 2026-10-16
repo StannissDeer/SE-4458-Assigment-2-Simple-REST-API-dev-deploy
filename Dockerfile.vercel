@@ -1,13 +1,15 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+WORKDIR /src
 COPY *.csproj ./
 RUN dotnet restore
 COPY . .
 RUN dotnet publish -c Release --no-restore -o /app/publish /p:UseAppHost=false
 
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
+FROM mcr.microsoft.com/dotnet/aspnet:10.0
 WORKDIR /app
 COPY --from=build /app/publish ./
-# Program.cs bu PORT değerine bağlanıyor (0.0.0.0:8080)
+# Program.cs binds to 0.0.0.0 on this port
 ENV PORT=8080 DOTNET_EnableDiagnostics=0
-ENTRYPOINT ["dotnet", "Assigment_2.dll"]
+ENTRYPOINT ["dotnet", "Assigment-2.dll"]
