@@ -2,8 +2,8 @@
 
 A simple REST API for a music playlist, built with **ASP.NET Core Web API (.NET 10)**, documented with **OpenAPI + Swagger UI**, and storing all data **in memory**.
 
-- **Source code:** https://github.com/<your-username>/<repo-name>
-- **Live Swagger:** https://<your-app>.vercel.app/swagger
+- **Source code:** https://github.com/StannissDeer/SE-4458-Assigment-2-Simple-REST-API-dev-deploy
+- **Live Swagger:** https://api-eight-zeta-93.vercel.app/swagger
 
 ## Endpoints
 
